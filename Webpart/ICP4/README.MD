@@ -1,10 +1,10 @@
 
+### Achyuth Kumar Valeti 
+
+avgh3@umsystem.edu
 
 ### Anusha Nelluri
+
 anhx2@umsystem.edu
 
-### Achyuth Kumar Valeti
-Email address: avgh3@umsystem.edu
-
-GitHub Link: 
-https://github.com/AchyuthValeti/Demo_Remote/tree/main/Webpart/ICP4
+Github Link: https://github.com/NelluriAnusha/Demo_Remote/tree/main/Webpart/ICP4
