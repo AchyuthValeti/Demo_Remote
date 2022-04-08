@@ -1,10 +1,10 @@
 package com.example.icp10;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.List;
 
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById(R.id.textview);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.github.com/")
+                .baseUrl("https://api.github.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -37,14 +37,14 @@ public class MainActivity extends AppCompatActivity {
         usersCall.enqueue(new Callback<List<User>>() {
             @Override
             public void onResponse(Call<List<User>> call, Response<List<User>> response) {
-                if (response.isSuccessful()) {
-                    List<User> users = response.body();
-                    for (User user: users) {
+                if(response.isSuccessful()) {
+                    List<User> users= response.body();
 
+                    for(User user:users) {
                         String data = "";
 
-                        data += "\n\nID: "+ user.getId() +"\n";
-                        data += "User Name: "+ user.getUsername() + "\n\n";
+                        data += "\n\nID: " + user.getId() + "\n";
+                        data += "User Name: " + user.getUserName() + "\n\n";
 
                         textView.append(data);
                     }
@@ -53,9 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<User>> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "data Failed", Toast.LENGTH_SHORT);
+                Toast.makeText(MainActivity.this,"Data Failed",Toast.LENGTH_SHORT);
             }
         });
-
     }
 }

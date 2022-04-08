@@ -7,14 +7,12 @@ public class User {
     private int id;
 
     @SerializedName("login")
-    private String username;
-    
-    public int getId() {
+    private String userName;
+
+    public int getId(){
         return id;
     }
-
-    public String getUsername() {
-        return username;
-
+    public String getUserName(){
+        return userName;
     }
 }
